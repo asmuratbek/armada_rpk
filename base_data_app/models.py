@@ -38,7 +38,7 @@ class ContactsPhone(models.Model):
         verbose_name_plural = 'Телефоны'
 
     phone = models.CharField(max_length=255, verbose_name='Телефон')
-    contact = models.ForeignKey(Contacts, verbose_name='Контакт')
+    contact = models.ForeignKey(Contacts, verbose_name='Контакт', on_delete=models.CASCADE)
 
 
 class Slider(models.Model):
@@ -169,7 +169,7 @@ class Faq(models.Model):
         verbose_name_plural = 'Вопросы-Ответы'
         ordering = ('order',)
 
-    category = models.ForeignKey(FaqCategory, verbose_name='Выберите категорию')
+    category = models.ForeignKey(FaqCategory, verbose_name='Выберите категорию', on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=255, verbose_name='Вопрос')
     text = RichTextUploadingField(verbose_name='Ответ')
     order = models.PositiveIntegerField(default=0, null=True, blank=True)
