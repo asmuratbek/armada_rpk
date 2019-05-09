@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <!-- ========== MAIN ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll"
+             data-options='{direction: "normal"}'>
+            <!-- Apply your Parallax background image here -->
+            <div class="divimage dzsparallaxer--target" style="height: 130%; background-image: url({% if service.image %}{{ service.image.url }}{% endif %});"></div>
+
+            <!-- Content -->
+            <div class="js-scroll-effect position-relative"
+                 data-scroll-effect="smoothFadeToBottom">
+                <div class="container space-top-2 space-bottom-1 space-top-md-5">
+                    <div class="text-center w-lg-80 mx-auto space-bottom-2 space-bottom-md-3">
+                        <h1 class="display-4 font-size-md-down-5 text-white font-weight-normal mb-0">Announcing a free
+                            plan for small teams</h1>
+                    </div>
+
+                    <!-- Author -->
+                    <div class="text-center">
+                        <div class="u-avatar mx-auto mb-2">
+                            <img class="img-fluid rounded-circle" src="{% static 'img/100x100/img1.jpg' %}"
+                                 alt="Image Description">
+                        </div>
+                        <span class="d-block">
+              <a class="text-white h6 mb-0" href="#">Andrea Gard</a>
+            </span>
+                    </div>
+                    <!-- End Author -->
+                </div>
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Hero Section -->
+
+        <!-- Description Section -->
+        <div class="container space-top-2 space-top-md-3">
+            <div class="w-lg-60 mx-auto">
+                <div class="mb-4">
+                    <span class="text-muted">April 15, 2018</span>
+                </div>
+
+                <div class="mb-5">
+                    {{ service.description|safe }}
+                </div>
+
+                <div class="js-slick-carousel u-slick"
+                     data-pagi-classes="text-center position-absolute position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination-- mb-5">
+                    {% for slider in service.slider_set.all %}
+                    <div class="js-slide bg-img-hero-center" style="background-image: url({{ slider.image.url }});">
+                        <div class="space-5">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Related News -->
+        <div class="bg-light">
+            <div class="container space-2 space-md-3">
+                <div class="card-deck d-block d-md-flex card-md-gutters-3">
+                    <!-- Blog News -->
+                    <div class="card border-0 mb-5 mb-md-0">
+                        <img class="card-img-top" src="../../assets/img/480x320/img15.jpg" alt="Image Description">
+                        <div class="card-body p-5">
+                            <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                            <h3 class="h6 mb-0">
+                                <a href="single-article-classic.html">Remote workers, here's how to dodge
+                                    distractions</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End Blog News -->
+
+                    <!-- Blog News -->
+                    <div class="card border-0 mb-5 mb-md-0">
+                        <img class="card-img-top" src="../../assets/img/480x320/img16.jpg" alt="Image Description">
+                        <div class="card-body p-5">
+                            <small class="d-block text-secondary mb-1">April 29, 2018</small>
+                            <h3 class="h6 mb-0">
+                                <a href="single-article-classic.html">How to make trust your competitive advantage</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End Blog News -->
+
+                    <!-- Blog News -->
+                    <div class="card border-0">
+                        <img class="card-img-top" src="../../assets/img/480x320/img13.jpg" alt="Image Description">
+                        <div class="card-body p-5">
+                            <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                            <h3 class="h6 mb-0">
+                                <a href="single-article-classic.html">How to change careers or start a home-based
+                                    business?</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End Blog News -->
+                </div>
+            </div>
+        </div>
+        <!-- End Related News -->
+
+
+    </main>
+    <!-- ========== END MAIN ========== -->
+{% endblock %}

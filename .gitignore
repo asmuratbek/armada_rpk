@@ -6,3 +6,4 @@ settings_local.py
 node_modules
 package-lock.json
 .env
+front-v2.2.1

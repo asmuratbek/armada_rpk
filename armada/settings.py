@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'base_data_app',
+    'adminsortable2'
 
 ]
 
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'armada.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'armada',
+        'USER': 'postgres',
+        'PASSWORD': 'newroad123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -158,3 +163,7 @@ GEOPOSITION_MARKER_OPTIONS = {
     }
 
 }
+try:
+    from armada.settings_local import *
+except ImportError:
+    pass

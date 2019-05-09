@@ -2,6 +2,7 @@ from geoposition.fields import GeopositionField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
+
 # Create your models here.
 
 class Logo(models.Model):
@@ -10,6 +11,7 @@ class Logo(models.Model):
         verbose_name_plural = 'Логотипы'
 
     image = models.ImageField(upload_to='images/logos', verbose_name='Логотипы')
+
 
 class Contacts(models.Model):
     class Meta:
@@ -28,7 +30,7 @@ class Contacts(models.Model):
     work_time = models.CharField(max_length=255, verbose_name='Режим работы', null=True, blank=True)
     location = GeopositionField(verbose_name='Маркер на карте', null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return 'Контакты'
 
 
@@ -53,10 +55,24 @@ class Slider(models.Model):
     text = models.TextField(verbose_name='Текст на слайде', null=True, blank=True)
     order = models.PositiveIntegerField(default=0, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
+    services = models.ForeignKey('Services', on_delete=models.CASCADE, verbose_name='Услуга', null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
+
+class Services(models.Model):
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
+
+    title = models.CharField(max_length=255, verbose_name='Название услуги')
+    description = RichTextUploadingField(verbose_name='Описание услуги')
+    icon = models.ImageField(upload_to='services/icons', verbose_name='Иконка')
+    image = models.ImageField(upload_to='services/images', verbose_name='Картинка', null=True)
+
+    def __str__(self):
+        return self.title
 
 class News(models.Model):
     class Meta:
@@ -69,7 +85,7 @@ class News(models.Model):
     text = RichTextUploadingField(verbose_name='Текст новости')
     date = models.DateTimeField(auto_now_add=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -93,7 +109,7 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=255, verbose_name='О нас')
     text = RichTextUploadingField(verbose_name='Текст о нас')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -105,7 +121,7 @@ class CompanyNumbers(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     number = models.CharField(max_length=255, verbose_name='Цифры')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -119,7 +135,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to='images/avatar', verbose_name='Фото сотрудника', null=True, blank=True)
     info = models.TextField(max_length=150, verbose_name='Доп инфо 150 символов', null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -135,7 +151,7 @@ class Reviews(models.Model):
     location_of_review = models.CharField(max_length=255, verbose_name='Страна получения отзыва', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -147,7 +163,7 @@ class Partners(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название компании')
     image = models.ImageField(upload_to='images/partners', verbose_name='Логотип партнеров')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -159,7 +175,7 @@ class FaqCategory(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название категории')
     icon = models.ImageField(max_length=255, verbose_name='Иконка изображения', null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -174,7 +190,7 @@ class Faq(models.Model):
     text = RichTextUploadingField(verbose_name='Ответ')
     order = models.PositiveIntegerField(default=0, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -185,7 +201,6 @@ class Category(models.Model):
 
     title = models.CharField(max_length=255, verbose_name='Название категории')
     is_menu = models.BooleanField(default=False)
-
 
 
 class FeedBack(models.Model):
@@ -199,9 +214,8 @@ class FeedBack(models.Model):
     email = models.CharField(max_length=255, verbose_name='Email')
     message = models.TextField(verbose_name='Комментарий')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name + '-' + self.last_name
-
 
 
 class Features(models.Model):
@@ -213,5 +227,5 @@ class Features(models.Model):
     image = models.ImageField(upload_to='images/features_icon', verbose_name='Иконка', null=True, blank=True)
     text = models.TextField(max_length=200, verbose_name='Текс')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
