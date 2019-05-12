@@ -74,6 +74,32 @@ class Services(models.Model):
     def __str__(self):
         return self.title
 
+
+class Department(models.Model):
+    class Meta:
+        verbose_name = 'Отдел'
+        verbose_name_plural = 'Отделы'
+
+    title = models.CharField(max_length=255, verbose_name='Название отдела')
+    description = RichTextUploadingField(verbose_name='Описание')
+    icon = models.ImageField(upload_to='department/icons')
+
+    def __str__(self):
+        return self.title
+
+
+class DepartmentSlider(models.Model):
+    class Meta:
+        verbose_name = 'Слайдер Отдела'
+        verbose_name_plural = 'Слайдеры Отделов'
+
+    title = models.CharField(max_length=255, verbose_name='Название слайдера')
+    image = models.ImageField(upload_to='departamentslider')
+    slider = models.ForeignKey(Department, verbose_name='Департамент', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
 class News(models.Model):
     class Meta:
         verbose_name = "Новость"
@@ -211,11 +237,11 @@ class FeedBack(models.Model):
     name = models.CharField(max_length=255, verbose_name='Имя')
     last_name = models.CharField(max_length=255, verbose_name='Фамилия', null=True, blank=True)
     phone = models.CharField(max_length=255, verbose_name='Телефон')
-    email = models.CharField(max_length=255, verbose_name='Email')
-    message = models.TextField(verbose_name='Комментарий')
+    email = models.CharField(max_length=255, verbose_name='Email', null=True, blank=True)
+    message = models.TextField(verbose_name='Комментарий', null=True, blank=True)
 
     def __str__(self):
-        return self.name + '-' + self.last_name
+        return self.name
 
 
 class Features(models.Model):

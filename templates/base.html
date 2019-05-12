@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>Corporate Business | Front - Responsive Website Template</title>
+  <title>Наружная реклама в Бишкеке под ключ - Armada.kg</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -35,7 +35,7 @@
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
           <!-- Logo -->
-          <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Front">
+          <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Armada.kg">
             <img src="{% static 'img/armadalogo.png' %}">
           </a>
           <!-- End Logo -->
@@ -102,7 +102,7 @@
 
               <!-- Button -->
               <li class="nav-item u-header__nav-last-item">
-                <a class="btn btn-sm btn-primary transition-3d-hover" href="/" target="_blank">
+                <a class="btn btn-sm btn-primary transition-3d-hover" href="#SVGfooterTopShape">
                   Обратный звонок
                 </a>
               </li>
@@ -130,13 +130,14 @@
       <!-- End Title -->
 
       <!-- Form -->
-      <form class="js-validate w-lg-80 mx-lg-auto">
+      <form class="js-validate w-lg-80 mx-lg-auto" action="{% url 'callback' %}">
+          {% csrf_token %}
         <div class="row mx-gutters-2">
           <div class="col-6 col-sm mb-2">
             <div class="js-form-message">
               <label class="sr-only" for="signupSrName">Name</label>
               <div class="input-group input-group-borderless">
-                <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
+                <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Имя" aria-label="Name" required
                        data-msg="Name must contain only letters.">
               </div>
             </div>
@@ -146,7 +147,7 @@
             <div class="js-form-message">
               <label class="sr-only" for="signupSrEmail">Email</label>
               <div class="input-group input-group-borderless">
-                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
+                <input type="number" class="form-control" name="phone" id="signupSrEmail" placeholder="Телефон" aria-label="Email" required
                        data-msg="Please enter a valid email address.">
               </div>
             </div>
@@ -164,7 +165,7 @@
       <div class="row align-items-lg-center">
         <div class="col-lg-3 mb-4 mb-lg-0">
           <!-- Copyright -->
-          <p class="small text-white-70 mb-0">&copy; Front. 2018 Htmlstream.</p>
+          <p class="small text-white-70 mb-0">&copy; Armada.kg 2008-2019</p>
           <!-- End Copyright -->
         </div>
 
@@ -172,16 +173,16 @@
           <!-- List -->
           <ul class="list-inline list-group-transparent list-group-white list-group-flush list-group-borderless text-lg-center mb-0">
             <li class="list-inline-item px-2">
-              <a class="list-group-item-action" href="../pages/about-agency.html">About</a>
+              <a class="list-group-item-action" href="">О компании</a>
             </li>
             <li class="list-inline-item px-2">
-              <a class="list-group-item-action" href="../pages/services-agency.html">Services</a>
+              <a class="list-group-item-action" href="">Услуги</a>
             </li>
             <li class="list-inline-item px-2">
-              <a class="list-group-item-action" href="../pages/careers.html">Careers</a>
+              <a class="list-group-item-action" href="">Блог</a>
             </li>
             <li class="list-inline-item px-2">
-              <a class="list-group-item-action" href="../blog/classic-right-sidebar.html">Blog</a>
+              <a class="list-group-item-action" href="">Контакты</a>
             </li>
           </ul>
           <!-- End List -->
@@ -191,25 +192,25 @@
           <!-- Social Networks -->
           <ul class="list-inline text-md-right mb-0">
             <li class="list-inline-item">
-              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
+              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="https://www.facebook.com/rpkarmada/">
                 <span class="fab fa-facebook-f btn-icon__inner"></span>
               </a>
             </li>
-            <li class="list-inline-item">
-              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                <span class="fab fa-google btn-icon__inner"></span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                <span class="fab fa-twitter btn-icon__inner"></span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">
-                <span class="fab fa-github btn-icon__inner"></span>
-              </a>
-            </li>
+{#            <li class="list-inline-item">#}
+{#              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">#}
+{#                <span class="fab fa-google btn-icon__inner"></span>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li class="list-inline-item">#}
+{#              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">#}
+{#                <span class="fab fa-twitter btn-icon__inner"></span>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li class="list-inline-item">#}
+{#              <a class="btn btn-sm btn-icon btn-soft-light rounded" href="#">#}
+{#                <span class="fab fa-github btn-icon__inner"></span>#}
+{#              </a>#}
+{#            </li>#}
           </ul>
           <!-- End Social Networks -->
         </div>

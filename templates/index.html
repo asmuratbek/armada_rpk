@@ -98,79 +98,79 @@
             <!-- End Title -->
 
             <div class="row justify-content-lg-center">
+                {% for department in departments %}
                 <div class="col-md-6 col-lg-5 mb-7">
                     <!-- Icon Blocks -->
                     <div class="media pr-lg-5">
-                        <figure id="icon9" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-9.svg" alt="SVG"
-                                 data-parent="#icon9">
+                        <figure id="icon9" class=" ie-height-56 w-100 max-width-8 mr-4">
+                            <img class="js-svg-injector" src="{{ department.icon.url }}" alt="{{ department.title }}"
+                                 style="width: 60px">
                         </figure>
                         <div class="media-body">
-                            <h3 class="h5">Баннера</h3>
-                            <p class="mb-1">Front is an incredibly beautiful, fully responsive, and mobile-first
-                                projects on the web.</p>
-                            <a class="font-size-1" href="#">Explore now <span
+                            <h3 class="h5">{{ department.title }}</h3>
+                            <p class="mb-1">{{ department.description|safe|truncatechars:200 }}</p>
+                            <a class="font-size-1" href="#">Узнать больше<span
                                     class="fas fa-angle-right align-middle ml-2"></span></a>
                         </div>
                     </div>
                     <!-- End Icon Blocks -->
                 </div>
-
-                <div class="col-md-6 col-lg-5 mb-7">
-                    <!-- Icon Blocks -->
-                    <div class="media pl-lg-5">
-                        <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-3.svg" alt="SVG"
-                                 data-parent="#icon3">
-                        </figure>
-                        <div class="media-body">
-                            <h3 class="h5">Объемные буквы</h3>
-                            <p class="mb-1">Front template can be easily customized with its cutting-edge components and
-                                features.</p>
-                            <a class="font-size-1" href="#">Explore now <span
-                                    class="fas fa-angle-right align-middle ml-2"></span></a>
-                        </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-
-                <div class="w-100"></div>
-
-                <div class="col-md-6 col-lg-5 mb-7 mb-lg-0">
-                    <!-- Icon Blocks -->
-                    <div class="media pr-lg-5">
-                        <figure id="icon5" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-5.svg" alt="SVG"
-                                 data-parent="#icon5">
-                        </figure>
-                        <div class="media-body">
-                            <h3 class="h5">Руководство</h3>
-                            <p class="mb-1">Front is not only for developers but also for designers, and includes a
-                                Sketch file.</p>
-                            <a class="font-size-1" href="#">Explore now <span
-                                    class="fas fa-angle-right align-middle ml-2"></span></a>
-                        </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-
-                <div class="col-md-6 col-lg-5">
-                    <!-- Icon Blocks -->
-                    <div class="media pl-lg-5">
-                        <figure id="icon2" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-2.svg" alt="SVG"
-                                 data-parent="#icon2">
-                        </figure>
-                        <div class="media-body">
-                            <h3 class="h5">Отдел маркетинга <span
-                                    class="badge badge-success font-weight-medium badge-pill ml-1">v2.0</span></h3>
-                            <p class="mb-1">Every component and plugin is well documented with live examples.</p>
-                            <a class="font-size-1" href="#">Explore now <span
-                                    class="fas fa-angle-right align-middle ml-2"></span></a>
-                        </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
+                {% endfor %}
+{#                <div class="col-md-6 col-lg-5 mb-7">#}
+{#                    <!-- Icon Blocks -->#}
+{#                    <div class="media pl-lg-5">#}
+{#                        <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">#}
+{#                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-3.svg" alt="SVG"#}
+{#                                 data-parent="#icon3">#}
+{#                        </figure>#}
+{#                        <div class="media-body">#}
+{#                            <h3 class="h5">Объемные буквы</h3>#}
+{#                            <p class="mb-1">Front template can be easily customized with its cutting-edge components and#}
+{#                                features.</p>#}
+{#                            <a class="font-size-1" href="#">Explore now <span#}
+{#                                    class="fas fa-angle-right align-middle ml-2"></span></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!-- End Icon Blocks -->#}
+{#                </div>#}
+{##}
+{#                <div class="w-100"></div>#}
+{##}
+{#                <div class="col-md-6 col-lg-5 mb-7 mb-lg-0">#}
+{#                    <!-- Icon Blocks -->#}
+{#                    <div class="media pr-lg-5">#}
+{#                        <figure id="icon5" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">#}
+{#                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-5.svg" alt="SVG"#}
+{#                                 data-parent="#icon5">#}
+{#                        </figure>#}
+{#                        <div class="media-body">#}
+{#                            <h3 class="h5">Руководство</h3>#}
+{#                            <p class="mb-1">Front is not only for developers but also for designers, and includes a#}
+{#                                Sketch file.</p>#}
+{#                            <a class="font-size-1" href="#">Explore now <span#}
+{#                                    class="fas fa-angle-right align-middle ml-2"></span></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!-- End Icon Blocks -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-md-6 col-lg-5">#}
+{#                    <!-- Icon Blocks -->#}
+{#                    <div class="media pl-lg-5">#}
+{#                        <figure id="icon2" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">#}
+{#                            <img class="js-svg-injector" src="../../assets/svg/icons/icon-2.svg" alt="SVG"#}
+{#                                 data-parent="#icon2">#}
+{#                        </figure>#}
+{#                        <div class="media-body">#}
+{#                            <h3 class="h5">Отдел маркетинга <span#}
+{#                                    class="badge badge-success font-weight-medium badge-pill ml-1">v2.0</span></h3>#}
+{#                            <p class="mb-1">Every component and plugin is well documented with live examples.</p>#}
+{#                            <a class="font-size-1" href="#">Explore now <span#}
+{#                                    class="fas fa-angle-right align-middle ml-2"></span></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!-- End Icon Blocks -->#}
+{#                </div>#}
             </div>
         </div>
         <!-- End Icon Blocks Section -->
@@ -250,151 +250,151 @@
         <!-- End Pricing Section -->
 
         <!-- Features Section -->
-        <div class="container space-bottom-sm-0">
-            <!-- Divider -->
-            <div class="w-65 w-lg-50 mx-auto">
-                <hr class="my-0">
-            </div>
-            <!-- End Divider -->
-
-            <div class="row space-top-3">
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon2" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-2.svg' %}" alt="SVG"
-                                 data-parent="#icon2">
-                        </figure>
-                        <p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the
-                            task at hand and ironing out the wrinkles is a key point.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon1" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-1.svg' %}" alt="SVG"
-                                 data-parent="#icon1">
-                        </figure>
-                        <p>Now that we've aligned the details, it's time to get things mapped out and organized. This
-                            part is really crucial in keeping the project in line to completion.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon3" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-3.svg' %}" alt="SVG"
-                                 data-parent="#icon3">
-                        </figure>
-                        <p>The time has come to bring those ideas and plans to life. This is where we really begin to
-                            visualize your napkin sketches and make them into beautiful pixels.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon4" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-4.svg' %}" alt="SVG"
-                                 data-parent="#icon4">
-                        </figure>
-                        <p>Whether through commerce or just an experience to tell your brand's story, the time has come
-                            to start using development languages that fit your projects needs.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon5" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-5.svg' %}" alt="SVG"
-                                 data-parent="#icon5">
-                        </figure>
-                        <p>Now that your brand is all dressed up and ready to party, it's time to release it to the
-                            world. By the way, let's celebrate already.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon6" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-6.svg' %}" alt="SVG"
-                                 data-parent="#icon6">
-                        </figure>
-                        <p>We get it, you're busy and it is important that someone keep up with marketing and driving
-                            people to your brand. We've got you covered.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon7" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-7.svg' %}" alt="SVG"
-                                 data-parent="#icon7">
-                        </figure>
-                        <p>It's important to stay detail oriented with every project we tackle. Staying focused allows
-                            us to turn every project we complete into something we love.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon8" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-8.svg' %}" alt="SVG"
-                                 data-parent="#icon8">
-                        </figure>
-                        <p>We strive to embrace and drive change in our industry which allows us to keep our clients
-                            relevant and ready to adapt.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-
-                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9 mb-lg-0">
-                    <!-- Icon Block -->
-                    <div class="pr-lg-4">
-                        <figure id="icon9" class="svg-preloader ie-height-56 max-width-8 mb-3">
-                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-9.svg' %}" alt="SVG"
-                                 data-parent="#icon9">
-                        </figure>
-                        <p>As creatives, it's important that we strive to do work outside of obligation. This lets us
-                            stay ahead of the curve for our clients and internal projects.</p>
-                        <a href="#">Learn More</a>
-                    </div>
-                    <!-- End Icon Block -->
-                </div>
-            </div>
+{#        <div class="container space-bottom-sm-0">#}
+{#            <!-- Divider -->#}
+{#            <div class="w-65 w-lg-50 mx-auto">#}
+{#                <hr class="my-0">#}
+{#            </div>#}
+{#            <!-- End Divider -->#}
+{##}
+{#            <div class="row space-top-3">#}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon2" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-2.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon2">#}
+{#                        </figure>#}
+{#                        <p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the#}
+{#                            task at hand and ironing out the wrinkles is a key point.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon1" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-1.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon1">#}
+{#                        </figure>#}
+{#                        <p>Now that we've aligned the details, it's time to get things mapped out and organized. This#}
+{#                            part is really crucial in keeping the project in line to completion.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon3" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-3.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon3">#}
+{#                        </figure>#}
+{#                        <p>The time has come to bring those ideas and plans to life. This is where we really begin to#}
+{#                            visualize your napkin sketches and make them into beautiful pixels.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon4" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-4.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon4">#}
+{#                        </figure>#}
+{#                        <p>Whether through commerce or just an experience to tell your brand's story, the time has come#}
+{#                            to start using development languages that fit your projects needs.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon5" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-5.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon5">#}
+{#                        </figure>#}
+{#                        <p>Now that your brand is all dressed up and ready to party, it's time to release it to the#}
+{#                            world. By the way, let's celebrate already.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon6" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-6.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon6">#}
+{#                        </figure>#}
+{#                        <p>We get it, you're busy and it is important that someone keep up with marketing and driving#}
+{#                            people to your brand. We've got you covered.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon7" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-7.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon7">#}
+{#                        </figure>#}
+{#                        <p>It's important to stay detail oriented with every project we tackle. Staying focused allows#}
+{#                            us to turn every project we complete into something we love.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon8" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-8.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon8">#}
+{#                        </figure>#}
+{#                        <p>We strive to embrace and drive change in our industry which allows us to keep our clients#}
+{#                            relevant and ready to adapt.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-6 col-lg-4 mb-7 mb-sm-9 mb-lg-0">#}
+{#                    <!-- Icon Block -->#}
+{#                    <div class="pr-lg-4">#}
+{#                        <figure id="icon9" class="svg-preloader ie-height-56 max-width-8 mb-3">#}
+{#                            <img class="js-svg-injector" src="{% static 'svg/icons/icon-9.svg' %}" alt="SVG"#}
+{#                                 data-parent="#icon9">#}
+{#                        </figure>#}
+{#                        <p>As creatives, it's important that we strive to do work outside of obligation. This lets us#}
+{#                            stay ahead of the curve for our clients and internal projects.</p>#}
+{#                        <a href="#">Learn More</a>#}
+{#                    </div>#}
+{#                    <!-- End Icon Block -->#}
+{#                </div>#}
+{#            </div>#}
 {##}
 {#            <!-- Divider -->#}
 {#            <div class="w-65 w-lg-50 mx-auto">#}
 {#                <hr class="mt-0 mb-9">#}
 {#            </div>#}
 {#            <!-- End Divider -->#}
-
+{##}
 {#            <div class="text-center">#}
 {#                <a href="#" class="btn btn-primary transition-3d-hover">See all Features</a>#}
 {#            </div>#}
-        </div>
+{#        </div>#}
         <!-- End Features Section -->
     </main>
     <!-- ========== END MAIN CONTENT ========== -->

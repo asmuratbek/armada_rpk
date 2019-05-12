@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <!-- ========== MAIN ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll"
+             data-options='{direction: "normal"}'>
+            <!-- Apply your Parallax background image here -->
+            <div class="divimage dzsparallaxer--target" style="height: 130%; background-image: url({% static 'img/img1.png' %});"></div>
+
+            <!-- Content -->
+            <div class="js-scroll-effect position-relative"
+                 data-scroll-effect="smoothFadeToBottom">
+                <div class="container space-top-2 space-bottom-1 space-top-md-5">
+                    <div class="text-center w-lg-80 mx-auto space-bottom-2 space-bottom-md-3">
+                        <h1 class="display-4 font-size-md-down-5 text-white font-weight-normal mb-0">Спасибо, ваша заявка успешно отправлена!</h1>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Hero Section -->
+
+
+    </main>
+    <!-- ========== END MAIN ========== -->
+{% endblock %}

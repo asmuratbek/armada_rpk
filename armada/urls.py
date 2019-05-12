@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from armada import settings
-from base_data_app.views import index, service
+from base_data_app.views import index, service, thanks, send_call_back
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', index, name='index'),
     path('service/<int:id>/', service, name='service'),
+    path('send_call_back', send_call_back, name='callback'),
+    path('thanks/', thanks, name='thanks')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
