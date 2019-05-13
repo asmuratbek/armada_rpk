@@ -3,7 +3,7 @@ from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 
 from .models import Slider, Contacts, AboutUs, News, CompanyNumbers, Team, Reviews, Partners, FaqCategory, \
-    Faq, Features, Logo, Services, Department, DepartmentSlider, FeedBack, Key, KeySlider
+    Faq, Features, Logo, Services, Department, DepartmentSlider, FeedBack, Key, KeySlider, Blog
 
 
 class SliderAdmin(SortableAdminMixin, admin.ModelAdmin):
@@ -97,3 +97,4 @@ admin.site.register(Department)
 admin.site.register(DepartmentSlider)
 admin.site.register(Key)
 admin.site.register(KeySlider)
+admin.site.register(Blog)

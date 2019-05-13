@@ -18,15 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 from armada import settings
-from base_data_app.views import index, service, thanks, send_call_back, about_company, get_project_in_key
+from base_data_app.views import index, service, thanks, send_call_back, about_company, get_project_in_key, blog_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', index, name='index'),
     path('service/<int:id>/', service, name='service'),
-    path('send_call_back', send_call_back, name='callback'),
+    path('send-call-back', send_call_back, name='callback'),
     path('thanks/', thanks, name='thanks'),
-    path('about_company/', about_company, name='about_company'),
-    path('get_project_in_key/', get_project_in_key, name='key')
+    path('about-company/', about_company, name='about_company'),
+    path('get-project-in-key/', get_project_in_key, name='key'),
+    path('blog-list/', blog_list, name='blog_list'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

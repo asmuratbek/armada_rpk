@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse
 
-from base_data_app.models import Services, Department, FeedBack, AboutUs, Key
+from base_data_app.models import Services, Department, FeedBack, AboutUs, Key, Blog
 
 
 def index(request):
@@ -40,3 +40,7 @@ def about_company(request):
 def get_project_in_key(request):
     object = Key.objects.first()
     return render(request, 'get_key.html', locals())
+
+def blog_list(request):
+    objects = Blog.objects.all()
+    return render(request, 'blog.html', locals())
