@@ -100,6 +100,7 @@ class DepartmentSlider(models.Model):
     def __str__(self):
         return self.title
 
+
 class News(models.Model):
     class Meta:
         verbose_name = "Новость"
@@ -133,6 +134,7 @@ class AboutUs(models.Model):
         verbose_name_plural = 'О нас'
 
     title = models.CharField(max_length=255, verbose_name='О нас')
+    image = models.ImageField(upload_to='about', null=True, verbose_name='Картинка')
     text = RichTextUploadingField(verbose_name='Текст о нас')
 
     def __str__(self):
@@ -252,6 +254,35 @@ class Features(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     image = models.ImageField(upload_to='images/features_icon', verbose_name='Иконка', null=True, blank=True)
     text = models.TextField(max_length=200, verbose_name='Текс')
+
+    def __str__(self):
+        return self.title
+
+
+class Key(models.Model):
+    class Meta:
+        verbose_name = 'Под ключ'
+        verbose_name_plural = 'Под ключ'
+
+    title = models.CharField(max_length=255, verbose_name='Название')
+    description = RichTextUploadingField(verbose_name='Описание')
+    image = models.ImageField(upload_to='key', verbose_name='Картинка', null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class KeySlider(models.Model):
+    class Meta:
+        verbose_name = 'Слайдер для под ключ'
+        verbose_name_plural = 'Слайдер под ключ'
+        ordering = ('order',)
+
+    title = models.CharField(max_length=255, verbose_name='Название слайдера')
+    image = models.ImageField(upload_to='images/slider', verbose_name='Изображение', null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    services = models.ForeignKey(Key, on_delete=models.CASCADE, verbose_name='Под ключ', null=True)
 
     def __str__(self):
         return self.title

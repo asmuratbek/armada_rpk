@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse
 
-from base_data_app.models import Services, Department, FeedBack
+from base_data_app.models import Services, Department, FeedBack, AboutUs, Key
 
 
 def index(request):
@@ -30,3 +30,13 @@ def send_call_back(request):
 
 def thanks(request):
     return render(request, 'thanks.html')
+
+
+def about_company(request):
+    object = AboutUs.objects.first()
+    return render(request, 'about.html', locals())
+
+
+def get_project_in_key(request):
+    object = Key.objects.first()
+    return render(request, 'get_key.html', locals())

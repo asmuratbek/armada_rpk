@@ -14,7 +14,7 @@
                  data-scroll-effect="smoothFadeToBottom">
                 <div class="container space-top-2 space-bottom-1 space-top-md-5">
                     <div class="text-center w-lg-80 mx-auto space-bottom-2 space-bottom-md-3">
-                        <h1 class="display-4 font-size-md-down-5 text-white font-weight-normal mb-0">{{ service.title }} в Бишкеке</h1>
+                        <h1 class="display-4 font-size-md-down-5 text-white font-weight-normal mb-0">{{ object.title }} в Бишкеке</h1>
                     </div>
 
                 </div>
@@ -31,12 +31,12 @@
                 </div>
 
                 <div class="mb-5">
-                    {{ service.description|safe }}
+                    {{ object.text|safe }}
                 </div>
 
                 <div class="js-slick-carousel u-slick"
                      data-pagi-classes="text-center position-absolute position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination-- mb-5">
-                    {% for slider in service.slider_set.all %}
+                    {% for slider in object.slider_set.all %}
                     <div class="js-slide bg-img-hero-center" style="background-image: url({{ slider.image.url }});">
                         <div class="space-5">
                         </div>

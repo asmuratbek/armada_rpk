@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from armada import settings
-from base_data_app.views import index, service, thanks, send_call_back
+from base_data_app.views import index, service, thanks, send_call_back, about_company, get_project_in_key
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('service/<int:id>/', service, name='service'),
     path('send_call_back', send_call_back, name='callback'),
-    path('thanks/', thanks, name='thanks')
+    path('thanks/', thanks, name='thanks'),
+    path('about_company/', about_company, name='about_company'),
+    path('get_project_in_key/', get_project_in_key, name='key')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
