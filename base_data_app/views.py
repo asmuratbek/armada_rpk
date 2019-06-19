@@ -30,7 +30,7 @@ def send_call_back(request):
     phone = 'Мой номер: ' + str(phone) + '\n'
     send_mail('Заявка с сайта ', name + phone,
               'asnotifications@gmail.com',
-              ['asmuratbek@gmail.com'])
+              ['armada.kg@gmail.com'])
     return HttpResponseRedirect(reverse('thanks'))
 
 
