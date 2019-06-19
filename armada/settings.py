@@ -163,12 +163,6 @@ GEOPOSITION_MARKER_OPTIONS = {
     }
 
 }
-
-try:
-    from armada.settings_local import *
-except ImportError:
-    pass
-
 try:
     from armada.env_data import email, password
 except ImportError:
@@ -178,3 +172,10 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = email
 EMAIL_HOST_PASSWORD = password
+
+try:
+    from armada.settings_local import *
+except ImportError:
+    pass
+
+
