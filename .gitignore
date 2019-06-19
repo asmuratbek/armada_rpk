@@ -7,3 +7,4 @@ node_modules
 package-lock.json
 .env
 front-v2.2.1
+/armada/env_data.py
