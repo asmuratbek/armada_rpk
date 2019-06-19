@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -25,6 +26,11 @@ def send_call_back(request):
     callback.name = name
     callback.phone = phone
     callback.save()
+    name = 'Моё имя: ' + str(name) + '\n'
+    phone = 'Мой номер: ' + str(phone) + '\n'
+    send_mail('Заявка с сайта ', name + phone,
+              'asnotifications@gmail.com',
+              ['asmuratbek@gmail.com'])
     return HttpResponseRedirect(reverse('thanks'))
 
 
